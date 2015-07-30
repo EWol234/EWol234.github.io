@@ -1,0 +1,12 @@
+{% extends "projects/base.html" %}
+
+{% block content %}
+  <div class="container-fluid">
+    <h2>{{post}}</h2>
+    <h4><b>Published: </b>{{post.published_date}}</h4>
+
+    <p></p>
+
+    <p>{{post.text}}</p>
+  </div>
+{% endblock content %}

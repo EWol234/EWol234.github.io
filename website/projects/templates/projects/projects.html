@@ -1,92 +1,25 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf8">
-		<title>Eyob W.</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="includes/bootstrap/css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="includes/styles.css" type="text/css">
-	</head>
-	<body style="background-color: lightslategray">
-		
-		<div class = "container-fluid">
-		
-			<div class="logo">
+{% extends "projects/base.html" %}
+
+{% block content %}
+	<div class="jumbotron">
+		<h2>Projects</h2>
+		<p>Here are all my interesting projects:</p>
+	</div>
+
+	<div class="projects">
+		<div classs="container-fluid">
+			<div class="row">
 				<div class="container-fluid">
-					<h4>Eyob Woldeghebriel <small>A Web Developer</small></h4>
-				</div>
-			</div>
-			
-			<p></p>
-			
-			<header class="top" role="header">			
-				<div class="container-fluid">
-					<nav class="navbar navbar-inverse" role="navigation">
-						<div class = "navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-								<span class="glyphicon glyphicon-align-justify"></span>
-							</button>
-						</div>
-						<div id="navbarCollapse" class="collapse navbar-collapse">
-							<ul class="nav navbar-nav">							
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li class="active"><a href="projects.html">Projects</a></li>
-								<li><a href="extras.html">Extras</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</header>
-			
-			<p></p>
-			
-			<div class="jumbotron">
-				<h2>Projects</h2>
-				<p>Here are all my interesting projects:</p>
-			</div>	
-			
-			<div class="projects">
-				<div classs="container-fluid">
 					<div class="row">
-						<div class="col-md-2">
-							<h3>Raspberry Pi Web Server</h3>
-						</div>
-						<div class="col-md-2">
-							<p>The server that this website runs on!</p>
-							<a href=# class="btn btn-medium btn-success">Check It Out</a>
-						</div>
-						<div class="col-md-2">
-							<img src="images/RPi_inside.gif" width="100">
-						</div>
-						<div class="col-md-2">
-							<h3>Website (HTML and Bootstrap 3)</h3>
-						</div>
-						<div class="col-md-2">
-							<p>My code for this website!</p>
-							<a href=# class="btn btn-medium btn-success">Check It Out</a>
-						</div>
-						<div class="col-md-2">
-							<img src="" width="100">
-						</div>
-					</div>					
-				</div>
-			</div>
-			
-			<p></p>
-			
-			<div class="bottom">
-				<div class="container-fluid">
-					<p>Contact @ eyobworrede@outlook.com</p>
-					<blockquote class="pull-right">
-						<p>"Raspberry Pi's are amazing."</p>
-						<small>by <cite>Eyob Woldeghebriel</cite></small>
-					</blockquote>
+						{% for post in posts %}
+							<div class="col-md-4">
+								<h3><a href="{% url "proj_display" pk=post.pk %}">{{post}}</a></h3>
+								<p><b>Published:</b> {{post.published_date}}</p>
+						  </div>
+						{% endfor %}
+					</div>
 				</div>
 			</div>
 		</div>
-		
-		<script src="includes/jquery/jquery-1.11.1.min.js"></script>
-		<script src="includes/bootstrap/js/bootstrap.min.js"></script>
-	</body>
-</html>
+	</div>
+{% endblock content %}
