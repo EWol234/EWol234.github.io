@@ -8,9 +8,10 @@
 
 	<div class="middle">
 		<div class="container-fluid">
+			<p></p>
 			{% for post in posts %}
 				<div class="col-md-4">
-					<h3><a class="btn btn-medium btn-primary" href="{% url "proj_display" pk=post.pk %}">{{post}}</a></h3>
+					<a class="btn btn-medium btn-primary" href="{% url "proj_display" pk=post.pk %}">{{post}}</a>
 					<p><b>Published:</b> {{post.published_date}}</p>
 				</div>
 			{% endfor %}
