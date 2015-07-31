@@ -31,10 +31,10 @@
 						</div>
 						<div id="navbarCollapse" class="collapse navbar-collapse">
 							<ul class="nav navbar-nav">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li class="active"><a href="projects.html">Projects</a></li>
-								<li><a href="extras.html">Extras</a></li>
+								<li><a href="{% url "index" %}">Home</a></li>
+								<li><a href="{% url "about" %}">About</a></li>
+								<li><a href="{% url "proj_list" %}">Projects</a></li>
+								<li><a href="{% url "extras" %}">Extras</a></li>
 							</ul>
 						</div>
 					</nav>
