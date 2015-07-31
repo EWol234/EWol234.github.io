@@ -13,19 +13,19 @@
 			<div class="col-md-4">
 				<h2>About</h2>
 				<p>A short biography and information about me.</p>
-				<a href="about.html" class="btn btn-large btn-success">Go to About:</a>
+				<a href="{% url "about" %}" class="btn btn-large btn-success">Go to About:</a>
 				<p></p>
 			</div>
 			<div class="col-md-4">
 				<h2>Projects</h2>
 				<p>My interesting projects, in both software and hardware.</p>
-				<a href="projects.html" class="btn btn-large btn-success">Go to Projects:</a>
+				<a href="{% url "proj_list" %}" class="btn btn-large btn-success">Go to Projects:</a>
 				<p></p>
 			</div>
 			<div class="col-md-4">
 				<h2>Extras</h2>
 				<p>Cool videos I've found.</p>
-				<a href="extras.html" class="btn btn-large btn-success">Go to Extras:</a>
+				<a href="{% url "extras" %}" class="btn btn-large btn-success">Go to Extras:</a>
 				<p></p>
 			</div>
 		</div>
