@@ -8,6 +8,11 @@
 {%endblock%}
 
 {% block content %}
+	<ol class="breadcrumb">
+		<li><a href="{% url "proj_list" %}">Projects</a></li>
+		<li class="active">{{post}}</li>
+	</ol>
+
   <div class="container-fluid">
     <h2>{{post}}</h2>
     <h4><b>Published: </b>{{post.published_date}}</h4>
