@@ -1,10 +1,18 @@
 {% extends "projects/base.html" %}
+{% load staticfiles %}
 
 {%block navbar%}
-	<li><a href="{% url "index" %}">Home</a></li>
-	<li><a href="{% url "about" %}">About</a></li>
-	<li class="active"><a href="{% url "proj_list" %}">Projects</a></li>
-	<li><a href="{% url "extras" %}">Extras</a></li>
+	<ul class="nav navbar-nav">
+		<li><a href="{% url "index" %}">Home</a></li>
+		<li><a href="{% url "about" %}">About</a></li>
+		<li class="active"><a href="{% url "proj_list" %}">Projects</a></li>
+		<li><a href="{% url "extras" %}">Extras</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li class="nav-divider"></li>
+		<li><a href=#>Log In</a></li>
+		<li><a href=#>Sign Up</a></li>
+	</ul>
 {%endblock%}
 
 {% block content %}
@@ -18,15 +26,18 @@
 			<div class="row">
 				{% for post in posts %}
 					<div class="col-md-4">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<a href="{% url "proj_display" pk=post.pk %}">{{post}}</a>
-								</h3>
-							</div>
-							<div class="panel-body">
-								<p><b>Published: </b>{{post.published_date}}</p>
-							</div>
+							<div class="well" style="padding-bottom: 10px">
+								<div class="media">
+								  <div class="media-left">
+								    <a href="#">
+								      <img class="media-object" src="{% static "images/RPi_inside.gif" %}" style="width: 40px; height: 40px">
+								    </a>
+								  </div>
+								  <div class="media-body">
+								    <h4 class="media-heading"><a href="{% url "proj_display" pk=post.pk %}">{{post}}</a></h4>
+								    <b>Published: </b>{{post.published_date}}
+								  </div>
+								</div>
 						</div>
 					</div>
 				{% endfor %}

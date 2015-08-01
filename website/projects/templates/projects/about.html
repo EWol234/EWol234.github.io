@@ -1,10 +1,17 @@
 {% extends "projects/base.html" %}
 
 {%block navbar%}
-	<li><a href="{% url "index" %}">Home</a></li>
-	<li class="active"><a href="{% url "about" %}">About</a></li>
-	<li><a href="{% url "proj_list" %}">Projects</a></li>
-	<li><a href="{% url "extras" %}">Extras</a></li>
+	<ul class="nav navbar-nav">
+		<li><a href="{% url "index" %}">Home</a></li>
+		<li class="active"><a href="{% url "about" %}">About</a></li>
+		<li><a href="{% url "proj_list" %}">Projects</a></li>
+		<li><a href="{% url "extras" %}">Extras</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li class="nav-divider"></li>
+		<li><a href=#>Log In</a></li>
+		<li><a href=#>Sign Up</a></li>
+	</ul>
 {%endblock%}
 
 {% block content %}
@@ -16,11 +23,11 @@
 				</div>
 				<div class="col-md-9">
 					<p style="font-size: 15px; font-family: arial">
-						<strong>So far, this website has been hard-coded in HTML and CSS<br>
-						as I learned and practiced those languages. However, I am now <br>
-						taking the website down temporarily to move it to Django, a <br>
-						Python web-framework. This would allow me to easily add projects <br>
-						without hard-coding a new page, and would help make the website <br>
+						<strong>So far, this website has been hard-coded in HTML and CSS
+						as I learned and practiced those languages. However, I am now
+						taking the website down temporarily to move it to Django, a
+						Python web-framework. This would allow me to easily add projects
+						without hard-coding a new page, and would help make the website
 						more dynamic.</strong>
 					</p>
 				</div>
