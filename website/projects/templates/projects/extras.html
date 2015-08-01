@@ -1,5 +1,12 @@
 {% extends "projects/base.html" %}
 
+{%block navbar%}
+	<li><a href="{% url "index" %}">Home</a></li>
+	<li><a href="{% url "about" %}">About</a></li>
+	<li><a href="{% url "proj_list" %}">Projects</a></li>
+	<li class="active"><a href="{% url "extras" %}">Extras</a></li>
+{%endblock%}
+
 {% block content %}
 	<div class="jumbotron">
 		<h2>Extras</h2>
@@ -25,4 +32,4 @@
 			</div>
 		</div>
 	</div>
-{% endblock content %}			
+{% endblock content %}
