@@ -1,21 +1,9 @@
-.logo{
-	border-bottom: 3px solid aqua;
-}
-
-.middle{
-	background-color: darkslategray;
-}
-
-.middle p{
-	color: white;
-}
-
 .h1{
 	color: white;
 }
 
 .bottom{
-	border-top: 5px solid aqua;
+	border-top: 5px solid black;
 }
 
 .bottom img{
