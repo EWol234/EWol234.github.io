@@ -8,6 +8,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    picture = models.ForeignKey('Picture')
 
     def publish(self):
         self.published_date = timezone.now()
@@ -15,3 +16,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Picture(models.Model):
+    address = models.CharField(max_length=1000)
+    title = models.CharField(max_length=100)
+    order = models.IntegerField()
+
+    def __str__(self):
+        return str(self.title)
