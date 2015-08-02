@@ -1,0 +1,36 @@
+{% extends "projects/base.html" %}
+
+{%block navbar%}
+	<ul class="nav navbar-nav">
+		<li><a href="{% url "index" %}">Home</a></li>
+		<li><a href="{% url "about" %}">About</a></li>
+		<li><a href="{% url "proj_list" %}">Projects</a></li>
+		<li><a href="{% url "extras" %}">Extras</a></li>
+	</ul>
+{%endblock%}
+
+{%block content%}
+  <div class="middle">
+    <div class="container-fluid">
+      <div class="row">
+        {% for post in posts %}
+          <div class="col-md-4">
+              <div class="well" style="padding-bottom: 10px">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object" src="{{post.picture.address}}" style="width: 40px; height: 40px">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading"><a href="{% url "proj_display" pk=post.pk %}">{{post}}</a></h4>
+                    <b>Published: </b>{{post.published_date}}
+                  </div>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{%endblock content%}
