@@ -1,14 +1,12 @@
 from django.shortcuts import render
-from .forms import SearchForm
 from projects.models import Post
 
 # Create your views here.
 def list(request):
-    form = SearchForm(request.GET)
-    if form.is_valid():
-        posts = Post.objects.filter(title__icontains=form.query)
-        return render(request, 'search/results.html', {'posts': post, 'form': form})
-
+    if request.GET['q'] is not '':
+        q = request.GET['q']
+        posts = Post.objects.filter(title__icontains=request.GET['q'])
+        return render(request, 'search/results.html', {'posts': posts, 'q': q})
     else:
-        form = SearchForm()
-        return render(request, 'search/results.html', {'form': form})
+        message = 'No results found.'
+        return render(request, 'search/results.html', {'message': message})
