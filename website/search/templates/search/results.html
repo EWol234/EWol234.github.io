@@ -16,8 +16,8 @@
         {% if message != None %}
           <h3 class="well">{{message}}</h3>
         {% endif %}
-        {% if message = None %}
-          <h3 class="well">Results for "{{q}} " :</h3>
+        {% if message == None %}
+          <h3 class="well">Results for <b>"{{q}}"</b> :</h3>
         {% endif %}
         {% for post in posts %}
           <div class="col-md-4">
