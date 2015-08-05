@@ -11,7 +11,8 @@ def index(request):
 
 def proj_display(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'projects/proj_display.html', {'post': post})
+    pictures = Picture.objects.filter(matching_post_id=pk).order_by('order')
+    return render(request, 'projects/proj_display.html', {'post': post, 'pictures': pictures})
 
 def proj_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

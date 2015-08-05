@@ -16,11 +16,23 @@
 	</ol>
 
   <div class="container-fluid">
-    <h2>{{post}}</h2>
-    <h4><b>Published: </b>{{post.published_date}}</h4>
-
-    <p></p>
-
-    <p>{{post.text}}</p>
+		<div class="well">
+			<div class="row">
+				<div class="col-md-4">
+			    <h2>{{post}}</h2>
+			    <h4><b>Published: </b>{{post.published_date}}</h4>
+				</div>
+				<img src="{{post.thumbnail.address}}" class="pull-left" style="height: 100px">
+			</div>
+		</div>
+		<div class="well">
+			<p>{{post.text}}</p>
+			<p></p>
+			{% for picture in pictures %}
+				<div class="row">
+					<img src="{{picture.address}}" style="height: 200px; max-width: 95%;padding-left: 15px; padding-bottom: 15px">
+				</div>
+			{% endfor %}
+		</div>
   </div>
 {% endblock content %}
