@@ -28,6 +28,10 @@
 		<div class="well">
 			<p>{{post.text}}</p>
 			<p></p>
+			{% for link in links %}
+				<a href="{{link.address}}" class="btn btn-large btn-success">{{link.title}}</a>
+			{% endfor %}
+			<p></p>
 			{% for picture in pictures %}
 				<div class="row">
 					<img src="{{picture.address}}" style="height: 200px; max-width: 95%;padding-left: 15px; padding-bottom: 15px">

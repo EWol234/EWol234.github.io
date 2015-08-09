@@ -24,8 +24,13 @@ class Picture(models.Model):
     order = models.IntegerField()
     matching_post = models.ForeignKey('Post', null=True, blank=True)
 
-    def forpost():
-        return matching_post.pk
+    def __str__(self):
+        return self.title
+
+class Link(models.Model):
+    address = models.CharField(max_length=1000)
+    title = models.CharField(max_length=100)
+    matching_post = models.ForeignKey('Post', null=True, blank=True)
 
     def __str__(self):
-        return str(self.title)
+        return self.title
