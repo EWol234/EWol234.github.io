@@ -11,20 +11,29 @@
 
 {%block content%}
 	<div class="well">
-		<form>
+		<!--<form action="/contact/" method="get">
 			<div class="form-group">
 				<label for="inputEmail">Email address:</label>
-				<input type="email" id="inputEmail" class="form-control" placeholder="example@example.com">
+				<input type="email" name="inputEmail" class="form-control" placeholder="example@example.com">
+			</div>
+			<div class="form-group">
+				<label for="inputSubject">Subject:</label>
+				<input type="text" name="subject" class="form-control">
 			</div>
 			<div class="form-group">
 				<label for="inputText">Message:</label>
-				<textarea class="form-control custom-control" rows="10" style="resize:none"></textarea>
+				<textarea name="message" class="form-control custom-control" rows="10" style="resize:none"></textarea>
 			</div>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox"> CC
+					<input name="cc" type="checkbox"> CC
 				</label>
 			</div>
+			<button class="btn btn-medium btn-primary" type="submit">Submit</button>
+		</form>-->
+		<form action="/contact/" method="POST">
+			{%csrf_token%}
+			{{form.as_p}}
 			<button class="btn btn-medium btn-primary" type="submit">Submit</button>
 		</form>
 	</div>
