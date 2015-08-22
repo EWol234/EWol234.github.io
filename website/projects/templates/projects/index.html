@@ -5,6 +5,8 @@
 		<li class="active"><a href="{% url "index" %}">Home</a></li>
 		<li><a href="{% url "about" %}">About</a></li>
 		<li><a href="{% url "proj_list" %}">Projects</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
 		<li><a href="{% url "contact" %}">Contact</a></li>
 	</ul>
 {%endblock%}
@@ -32,9 +34,9 @@
 				<p></p>
 			</div>
 			<div class="col-md-4">
-				<h2>Extras</h2>
-				<p>Cool videos I've found.</p>
-				<a href="{% url "extras" %}" class="btn btn-large btn-success">Go to Extras:</a>
+				<h2>Contact</h2>
+				<p>An email form to contact me if you have any questions.</p>
+				<a href="{% url "contact" %}" class="btn btn-large btn-success">Go to Contact:</a>
 				<p></p>
 			</div>
 		</div>
