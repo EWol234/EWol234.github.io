@@ -11,7 +11,6 @@ def contact(request):
             sender = form.cleaned_data['sender']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            sender = 'eyobwebsite@gmail.com'
             cc = form.cleaned_data['cc']
             to = ['eyobwebsite@gmail.com']
             if cc:

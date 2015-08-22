@@ -1,4 +1,5 @@
 {% extends "projects/base.html" %}
+{% load crispy_forms_tags %}
 
 {%block navbar%}
 	<ul class="nav navbar-nav">
@@ -31,10 +32,11 @@
 			</div>
 			<button class="btn btn-medium btn-primary" type="submit">Submit</button>
 		</form>-->
-		<form action="/contact/" method="POST">
+		<!-- <form action="/contact/" method="POST">
 			{%csrf_token%}
-			{{form.as_p}}
-			<button class="btn btn-medium btn-primary" type="submit">Submit</button>
-		</form>
+			{% crispy form %}
+			<button class="btn btn-medium btn-primary" type="submit">Send</button>
+		</form> -->
+		{% crispy form %}
 	</div>
 {%endblock content%}
