@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="well">
-			<p>{{post.text}}</p>
+			<p>{{post.text|linebreaks}}</p>
 			<p></p>
 			{% for link in links %}
 				<a href="{{link.address}}" class="btn btn-large btn-success">{{link.title}}</a>
