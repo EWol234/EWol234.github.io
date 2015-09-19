@@ -20,8 +20,5 @@ def proj_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'projects/projects.html', {'posts': posts})
 
-def about(request):
-    return render(request, 'projects/about.html', {})
-
 def extras(request):
     return render(request, 'projects/extras.html', {})
