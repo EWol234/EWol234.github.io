@@ -18,6 +18,10 @@
 				{% for c in categories %}
 					<h3>{{c.title}}</h3>
 					<p>{{c.content}}</p>
+					{% for subc in c.subcategory_set.all %}
+						<h4><b>{{subc.title}}</h4></b>
+						<p>{{subc.content}}</p>
+					{% endfor %}
 				{% endfor %}
 		</div>
 	</div>
