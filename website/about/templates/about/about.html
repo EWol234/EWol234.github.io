@@ -15,41 +15,10 @@
 	<div class="well">
 		<div class="container-fluid">
 				<img src="http://baxtercoaching.com/wp-content/uploads/2013/12/facebook-default-no-profile-pic-300x300.jpg" style="padding-bottom: 10px; max-width: 85%" align="left" hspace="20px">
-
-					<p style="font-size: 15px; font-family: arial">
-						<strong>So far, this website has been hard-coded in HTML and CSS
-						as I learned and practiced those languages. However, I am now
-						taking the website down temporarily to move it to Django, a
-						Python web-framework. This would allow me to easily add projects
-						without hard-coding a new page, and would help make the website
-						more dynamic.aldkja;slfjalsjdfaljdf;lajf;lsjdfjasl;dfja;lfja;lskjf;lakdfa
-					jsfajlkdfjal;sjf;lajdf;lajsf;lajlsfjaslfjal;dsjfla;jf;alkjf;lasjflaSo far, this website has been hard-coded in HTML and CSS
-					as I learned and practiced those languages. However, I am now
-					taking the website down temporarily to move it to Django, a
-					Python web-framework. This would allow me to easily add projects
-					without hard-coding a new page, and would help make the website
-					more dynamic.aldkja;slfjalsjdfaljdf;lajf;lsjdfjasl;dfja;lfja;lskjf;lakdfa
-				jsfajlkdfjal;sjf;lajdf;lajsf;lajlsfjaslfjal;dsjfla;jf;alkjf;lasjflaSo far, this website has been hard-coded in HTML and CSS
-				as I learned and practiced those languages. However, I am now
-				taking the website down temporarily to move it to Django, a
-				Python web-framework. This would allow me to easily add projects
-				without hard-coding a new page, and would help make the website
-				more dynamic.aldkja;slfjalsjdfaljdf;lajf;lsjdfjasl;dfja;lfja;lskjf;lakdfa
-			jsfajlkdfjal;sjf;lajdf;lajsf;lajlsfjaslfjal;dsjfla;jf;alkjf;lasjflaSo far, this website has been hard-coded in HTML and CSS
-			as I learned and practiced those languages. However, I am now
-			taking the website down temporarily to move it to Django, a
-			Python web-framework. This would allow me to easily add projects
-			without hard-coding a new page, and would help make the website
-			more dynamic.aldkja;slfjalsjdfaljdf;lajf;lsjdfjasl;dfja;lfja;lskjf;lakdfa
-		jsfajlkdfjal;sjf;lajdf;lajsf;lajlsfjaslfjal;dsjfla;jf;alkjf;lasjflaSo far, this website has been hard-coded in HTML and CSS
-		as I learned and practiced those languages. However, I am now
-		taking the website down temporarily to move it to Django, a
-		Python web-framework. This would allow me to easily add projects
-		without hard-coding a new page, and would help make the website
-		more dynamic.aldkja;slfjalsjdfaljdf;lajf;lsjdfjasl;dfja;lfja;lskjf;lakdfa
-	jsfajlkdfjal;sjf;lajdf;lajsf;lajlsfjaslfjal;dsjfla;jf;alkjf;lasjfla</strong>
-					</p>
-
+				{% for c in categories %}
+					<h3>{{c.title}}</h3>
+					<p>{{c.content}}</p>
+				{% endfor %}
 		</div>
 	</div>
 {% endblock content %}
