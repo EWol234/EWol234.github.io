@@ -20,7 +20,7 @@
 					<p>{{c.content}}</p>
 					{% for subc in c.subcategory_set.all %}
 						<h4><b>{{subc.title}}</b></h4>
-						<p>{{subc.content}}</p>
+						<p>{{subc.content|linebreaks}}</p>
 					{% endfor %}
 				{% endfor %}
 		</div>
