@@ -17,8 +17,8 @@
 				<img src="http://baxtercoaching.com/wp-content/uploads/2013/12/facebook-default-no-profile-pic-300x300.jpg" style="padding-bottom: 10px; max-width: 85%" align="left" hspace="20px">
 				{% for c in categories %}
 					<h3>{{c.title}}</h3>
-					<p>{{c.content}}</p>
-					{% for subc in c.subcategory_set.all %}
+					<p>{{c.content|linebreaks}}</p>
+					{% for subc in c.subcategory_set.all|dictsort:"order" %}
 						<h4><b>{{subc.title}}</b></h4>
 						<p>{{subc.content|linebreaks}}</p>
 					{% endfor %}

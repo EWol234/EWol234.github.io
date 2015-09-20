@@ -10,9 +10,9 @@ class Category(models.Model):
         return self.title
 
 class Subcategory(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    order = models.IntegerField()
+    title = models.CharField(max_length=200, default='')
+    content = models.TextField(blank=True, null=True)
+    order = models.IntegerField(default='')
     parent = models.ForeignKey(Category, null=True, blank=True)
 
     def __str__(self):
