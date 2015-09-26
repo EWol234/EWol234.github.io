@@ -25,9 +25,13 @@
 
 			{% for post in posts %}
 				<div class="item {% if forloop.first %} active {% endif %}">
-					<a href="{% url "proj_display" pk=post.pk %}"><img src="{{post.carousel_pic.address}}" alt="Blue Code Wall" class="img-responsive"></a>
+					<a href="{% url "proj_display" pk=post.pk %}">
+						<center>
+							<img src="{{post.carousel_pic.address}}" alt="Blue Code Wall" class="img-responsive">
+						</center>
+					</a>
 					<div class="carousel-caption">
-						<h3>{{post.title}}</h3>
+						<h2>{{post.title}}</h2>
 					</div>
 				</div>
 			{% endfor %}
