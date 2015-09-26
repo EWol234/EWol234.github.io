@@ -9,6 +9,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     thumbnail = models.ForeignKey('Picture', blank=True, null=True)
+    carousel_pic = models.ForeignKey('Picture', blank=True, null=True, related_name="carousel")
+    carousel = models.NullBooleanField()
 
     def publish(self):
         self.published_date = timezone.now()

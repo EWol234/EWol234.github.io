@@ -3,11 +3,12 @@ from .models import Post
 from .models import Picture
 from .models import Link
 from django.utils import timezone
+from django.db import models
 
 # Create your views here.
 
 def index(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(carousel=True)
     return render(request, 'projects/index.html', {'posts': posts})
 
 def proj_display(request, pk):
