@@ -14,9 +14,15 @@ def contact(request):
             cc = form.cleaned_data['cc']
             to = ['eyobwebsite@gmail.com']
             if cc:
-                to.append(sender)
+                to = [sender]
+                send_mail(subject, message, sender, to, fail_silently=False)
+                to = ['eyobwebsite@gmail.com']
+                message += "\n%s" % sender
+                send_mail(subject, message, sender, to, fail_silently=False)
+            else:
+                message += "\n%s" % sender
+                send_mail(subject, message, sender, to, fail_silently=False)
 
-            send_mail(subject, message, sender, to, fail_silently=False)
             return HttpResponseRedirect('/contact/')
 
     else:
