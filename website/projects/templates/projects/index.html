@@ -27,7 +27,7 @@
 				<div class="item {% if forloop.first %} active {% endif %}">
 					<a href="{% url "proj_display" pk=post.pk %}">
 						<center>
-							<img src="{{post.carousel_pic.address}}" alt="Blue Code Wall" class="img-responsive">
+							<img src="{{post.carousel_pic.address}}" alt="Blue Code Wall" class="img-responsive" style="max-height: 500px">
 						</center>
 						<div class="carousel-caption">
 							<h2>{{post.title}}</h2>
